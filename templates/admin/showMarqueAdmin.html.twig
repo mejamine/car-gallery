@@ -1,0 +1,88 @@
+{% extends 'base2.html.twig' %}
+{% block body %}
+<style>
+    img{
+        width:175px;
+        height:140px;
+    }
+    table{
+        width:95vw;
+        margin:auto;
+    }
+    td{
+        text-align:center;
+    }
+    .buttons{
+        text-align:center;
+        justify-content:center;
+    }
+    .modify{
+        width:100px;
+        height:20px;
+        background-color:green;
+        border:1px black solid;
+        border-radius:30px;
+        display:flex;
+        text-align:center;
+        justify-content:center;
+        margin:auto;
+        color:black;
+        text-decoration:none;
+        margin-bottom:20px;
+    }
+    .delete{
+        width:100px;
+        height:20px;
+        background-color:red;
+        border:1px black solid;
+        border-radius:30px;
+        display:flex;
+        text-align:center;
+        justify-content:center;
+        margin:auto;
+        color:black;
+        text-decoration:none;
+        margin-top:20px;
+    }
+    .modifyImage{
+        width:100px;
+        height:20px;
+        background-color:blue;
+        border:1px black solid;
+        border-radius:30px;
+        display:flex;
+        text-align:center;
+        justify-content:center;
+        margin:auto;
+        color:black;
+        text-decoration:none;
+        margin-bottom:20px;
+    }
+</style>
+<table class="table" border="1">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Logo</th>
+            <th>Url</th>
+            <th>Name</th>
+            <th>Operation</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for marque in marques %}
+        <tr>
+            <td>{{marque.id}}</td>
+            <td><img src="../../public/images/logos/{{marque.logo}}" alt="{{marque.name}}"></td>
+            <td>{{marque.logo}}</td>
+            <td>{{marque.name}}</td>
+            <td class="buttons">
+                <a class='modifyImage' href="{{path('editMarqueImage',{'id':marque.id})}}">Modify Image</a>
+                <a class='modify' href="{{path('editMarque',{'id':marque.id})}}">Modify</a>
+                <a class='delete' href="{{path('deleteMarque',{'id':marque.id})}}" onclick="return confirm('Are you sure to delete!{{marque.name}}')">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Start Exploring Here!{% endblock %}
+
+{% block body %}
+<style>
+*{box-sizing:border-box;}
+    .container1
+    {
+        display:flex;
+        width:96vw;
+        text-align:center;
+        flex-wrap: wrap;
+    }
+    .container2
+    {
+        width:32vw;
+        text-align:center;
+    }
+    .logo
+    {
+        height:280px;
+        width:280px;
+    }
+    .div1
+    {
+        text-align:center;
+        font-size:x-large;
+    }
+</style>
+<div class="container1">
+{% for marque in lesMarques %}
+    <div class="container2">
+        <img class="logo" src="../../public/images/logos/{{marque.logo}}">
+        <div class="div1">
+            {{marque.name}} <br>
+            <a  href="{{path('cars',{'id':marque.id})}}">Show</a>
+        </div>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}

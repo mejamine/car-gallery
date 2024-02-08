@@ -1,0 +1,48 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}Hello Admin{% endblock %}
+
+{% block body %}
+<style>
+    .container{
+        height:70vh;
+        text-align:center;
+
+    }
+    .container1{
+        text-align:center;
+        display:flex;
+        margin:auto;
+        justify-content:center;
+    }
+    .container2{
+        text-align:center;
+        display:flex;
+        margin:auto;
+        justify-content:center;
+    }
+    a{
+        width:150px;
+        height:40px;
+        background-color:green;
+        border:1px black solid;
+        border-radius:20px;
+        display:flex;
+        text-align:center;
+        justify-content:center;
+        margin:20px;
+        color:black;
+        text-decoration:none;
+    }
+</style>
+
+<div class="container">
+    <h1>Manage The Website DataBase</h1><br>
+    <div class="container1">
+        <a href="{{path('viewCar')}}">Cars View</a><a href="{{path('viewMarque')}}">Marque View</a><br>
+    </div><br><br>
+    <div class="container2">
+        <a href="{{path('addCar')}}">Add A Car</a><a href="{{path('addMarque')}}">Add A Marque</a>
+    </div>
+</div>
+{% endblock %}

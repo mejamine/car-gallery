@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Start Exploring Here!{% endblock %}
+
+{% block body %}
+<style>
+*{box-sizing:border-box;}
+body{margin:0;
+text-align:center;}
+    .container1
+    {
+        display:flex;
+        margin:3vw;
+        width:96vw;
+        height:70vh;
+        text-align:center;
+        flex-wrap: wrap;
+        padding-top:10vh;
+        align:center;
+    }
+    .container2
+    {
+        width:32vw;
+        text-align:center;
+        margin:auto;
+    }
+    .logo
+    {
+        height:280px;
+        width:350px;
+        border-radius:30px;
+    }
+    .div1
+    {
+        text-align:center;
+        font-size:x-large;
+    }
+</style>
+<div class="container1">
+{% for car in cars %}
+    <div class="container2">
+        <img class="logo" src="../../images/cars/{{car.image}}">
+        <div class="div1">
+            {{car.name}} 
+        </div>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'base3.html.twig' %}
+{% block body %}
+<style>
+    form{
+        width:50vw;
+        margin:auto;
+        height:60vh;
+        text-align:center;
+    }
+    div{
+        text-align:center;
+    }
+    input{
+        display:block;
+        width:200px;
+        border-radius:20px;
+        margin:auto;
+        margin-top:20px;
+        margin-bottom:20px;
+    }
+
+    button{
+        width:100px;
+        border-radius:20px;
+        margin:20px;
+    }
+    a{
+        width:150px;
+        height:40px;
+        background-color:green;
+        border:1px black solid;
+        border-radius:20px;
+        display:flex;
+        text-align:center;
+        justify-content:center;
+        margin:20px;
+        color:black;
+        text-decoration:none;
+    }
+</style>
+<h1>Login </h1>
+{% if error %}
+ <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+<form action="{{ path('login') }}" method="post">
+ <label for="username">Username:</label>
+ <input type="text" id="username" name="_username" value="{{ last_username }}"/>
+ <label for="password">Password:</label>
+ <input type="password" id="password" name="_password"/>
+ <button type="submit">login</button>
+ <center><a href="{{ path('user_registration') }}">Register</a></center>
+</form>
+{% endblock %}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link rel="stylesheet" href="../public/styleBase.css">
+    </head>
+    <style>
+    .header{
+    height:15vh;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-color: rgb(248, 255, 228);
+    margin-top:-20px;
+    }
+    .footer{
+    height:15vh;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    background-color: rgb(248, 255, 228);
+}
+body{
+    background-color: rgb(189, 189, 189);
+    margin:0;
+    text-align:center;
+}
+.a{
+        width:150px;
+        height:30px;
+        background-color:green;
+        border:1px black solid;
+        border-radius:20px;
+        display:flex;
+        text-align:center;
+        justify-content:center;
+        margin:20px;
+        color:black;
+        text-decoration:none;
+    }
+    </style>
+    <header class="header" >
+        <h1>
+            <center>
+                The Best Old School Cars
+            </center>
+        </h1>
+    </header>
+    <body>
+        
+        {% block body %}{% endblock %}
+    </body>
+    <footer class="footer" >
+        <h1>
+            <center>
+                Contact
+            </center>
+        </h1>
+    </footer>
+</html>
