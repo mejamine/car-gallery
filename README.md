@@ -1,6 +1,6 @@
 This is a Symfony project sample which is a car gallery with an authentification interface with two type of users ("admin" , "user")
 download Xamp, clone this project in your local machine (in c: -> xamp -> htdocs ) and  configure your data base in the project files (.env)
-like this (' DATABASE_URL="mysql://root@127.0.0.1:3306/MyCarGallery" ')
+like this (' DATABASE_URL="mysql://root@127.0.0.1:3306/car-gallery/public/index.php" ')
 open your XAMP and run apashe and mysql
 open terminal in your visual studio code or any editor of code and execute this line (' php bin/console doctrine:schema:update --force ') or these two lines :
 1- php bin/console make:migration
